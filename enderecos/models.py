@@ -11,5 +11,5 @@ class Enderecos(models.Model):
     longitude = models.FloatField(null=True, blank=True)
 
     def __str__(self):
-        return self.nome
+        return self.linha1
 
