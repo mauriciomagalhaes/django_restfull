@@ -9,5 +9,5 @@ class Comentarios(models.Model):
     aprovado = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.usuario.first_name
+        return self.usuario.username
 

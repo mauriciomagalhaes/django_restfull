@@ -15,12 +15,12 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Comentarios',
+            name='Avaliacoes',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('comentario', models.TextField()),
+                ('comentario', models.TextField(blank=True, null=True)),
+                ('nota', models.DecimalField(decimal_places=1, max_digits=2)),
                 ('data', models.DateTimeField(auto_now_add=True)),
-                ('aprovado', models.BooleanField(default=False)),
                 ('usuario', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
