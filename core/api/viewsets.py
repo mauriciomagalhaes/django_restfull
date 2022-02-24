@@ -9,8 +9,4 @@ class PontoTuristicoViewSet(ModelViewSet):
     serializer_class = PontoTuristicoSerializer
 
     def get_queryset(self):
-        return PontoTuristico.objects.filter(aprovado=True)
-
-    @action(methods=['get'], detail=True)
-    def denunciar(self, request, pk):
-        pass
+        return PontoTuristico.objects.all()
