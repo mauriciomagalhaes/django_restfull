@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 3 APP
     'rest_framework',
+    'django_filters',
+    # My app
     'core',
     'atracoes',
     'comentarios',
@@ -126,6 +129,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_ROOT = 'imagens'
 MEDIA_URL = '/media/'
+
+#REST_FRAMEWORK = {
+#    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+#}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
