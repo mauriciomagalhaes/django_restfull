@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Django debug",
+            "name": "debug",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/manage.py",
@@ -15,7 +15,7 @@
             "django": true
         },
         {
-            "name": "Django Makemigrations",
+            "name": "Makemigrations",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/manage.py",
@@ -25,7 +25,7 @@
             "django": false
         },
         {
-            "name": "Django Migrate",
+            "name": "Migrate",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/manage.py",
