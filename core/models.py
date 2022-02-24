@@ -1,4 +1,3 @@
-import re
 from django.db import models
 from atracoes.models import Atracao
 from comentarios.models import Comentarios
@@ -14,6 +13,11 @@ class PontoTuristico(models.Model):
     avaliacoes = models.ManyToManyField(Avaliacoes, blank=True)
     endereco = models.ForeignKey(Enderecos, on_delete=models.CASCADE, null=True, blank=True)
     foto = models.ImageField(upload_to='pontos_turisticos', null=True, blank=True)
+
+    @property # incluindo  serializacao por aqui
+    def descricao_completa2(self):
+        return '%s - %s' % (self.nome, self.descricao)
+
     def __str__(self):
         return self.nome
         
