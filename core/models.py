@@ -4,6 +4,10 @@ from comentarios.models import Comentarios
 from avaliacoes.models import Avaliacoes
 from enderecos.models import Enderecos
 # Create your models here.
+
+class DocIdentificacao(models.Model):
+    description = models.CharField(max_length=100)
+
 class PontoTuristico(models.Model):
     nome = models.CharField(max_length=150)
     descricao = models.TextField()
@@ -13,6 +17,7 @@ class PontoTuristico(models.Model):
     avaliacoes = models.ManyToManyField(Avaliacoes, blank=True)
     endereco = models.ForeignKey(Enderecos, on_delete=models.CASCADE, null=True, blank=True)
     foto = models.ImageField(upload_to='pontos_turisticos', null=True, blank=True)
+    doc_identificacao = models.OneToOneField('DocIdentificacao', on_delete=models.CASCADE, null=True, blank=True)
 
     @property # incluindo  serializacao por aqui
     def descricao_completa2(self):
