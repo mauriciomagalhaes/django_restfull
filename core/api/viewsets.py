@@ -11,13 +11,13 @@ class PontoTuristicoViewSet(ModelViewSet):
     #queryset = PontoTuristico.objects.all()
     serializer_class = PontoTuristicoSerializer
     filter_backends = (SearchFilter,)
-    permission_classes = (IsAuthenticated,) # somente autenticados
+    #permission_classes = (IsAuthenticated,) # somente autenticados
     #permission_classes = (IsAdminUser,) # somente autenticados admin
     #permission_classes = (IsAuthenticatedOrReadOnly,) # somente autenticados caso contrario leitura
     #permission_classes = (DjangoModelPermissions,) # todos autenticados basea-se na permissãoes do Django
-    authentication_classes = (TokenAuthentication,)
+    #authentication_classes = (TokenAuthentication,)
     search_fields = ('nome', 'descricao', 'endereco__linha1')
-    lookup_field = 'nome' # O campo so pode ser único
+    #lookup_field = 'nome' # O campo so pode ser único
 
     def get_queryset(self):
         id = self.request.query_params.get('id', None)
